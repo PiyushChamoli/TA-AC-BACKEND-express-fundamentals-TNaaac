@@ -50,3 +50,17 @@ table {
 body {
     background-color: blue;
 }
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+div {
+    flex: 0 1 40%;
+}
+
+img {
+    width: 100%;
+    border: 3px solid peru;
+}
