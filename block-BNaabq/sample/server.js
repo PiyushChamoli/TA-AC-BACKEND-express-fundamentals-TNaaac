@@ -13,9 +13,14 @@ app.get('/',(req,res,next) => {
     next()
 })
 
-app.get('/about', (req,res,next) => {
+app.use((req,res,next) => {
     console.log(req.cookies)
+    next()
+})
+
+app.get('/about', (req,res,next) => {
     res.cookie('username','piyush')
+    res.end('About Page')
     next()
 })
 
