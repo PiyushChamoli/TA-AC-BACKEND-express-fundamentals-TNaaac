@@ -11,14 +11,15 @@ var cookieParser = require("cookie-parser")
 
 var app = express()
 
-app.use(logger('dev'))
 
+// Middleware
+app.use(logger('dev'))
 app.use(express.urlencoded({extended:false}))
 
+// Routes
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html')
 })
-
 app.get('/new', (req,res) => {
     res.sendFile(__dirname + '/new.html')    
 })
@@ -26,11 +27,9 @@ app.get('/users/:data', (req,res) => {
     var data = req.params.data
     res.send(data)
 })
-
-app.post('/new', (req,res,next) => {
-    console.log(req.query)
-    res.json(req.query)
-    next()
+app.post('/new', (req,res) => {
+    console.log(req.body)
+    res.json(req.body)
 })
 
 
