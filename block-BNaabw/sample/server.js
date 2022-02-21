@@ -15,6 +15,9 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/index.html')
 })
+app.get('/users', (req,res) => {
+    res.send('User Page')
+})
 app.get('/blog', (req,res) => {
     res.sendFile(__dirname + '/blog.html')
 })
